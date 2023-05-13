@@ -43,6 +43,16 @@ public class Program {
             worker.addContract(contract);
         }
 
+        System.err.println();
+        System.err.println("ENter month and year to calcule income (MM/YYYY): ");
+        String monthAndYear = entry.nextLine();
+        int month = Integer.parseInt(monthAndYear.substring(0, 2));
+        int year = Integer.parseInt(monthAndYear.substring(3));
+
+        System.out.println("Name: " + worker.getName());
+        System.out.println("Department: " + worker.getDepartment().getName());
+        System.err.println("Incame for " + monthAndYear +": " + String.format("%.2f", worker.income(year, month)) );
+
         entry.close();
     }
 }
