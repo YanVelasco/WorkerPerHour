@@ -11,7 +11,7 @@ import entities.Worker;
 import entities.enums.WorkerLevel;
 
 public class Program {
-    public static void main(String[] args, HourContract HourContract) throws Exception {
+    public static void main(String[] args) throws Exception {
         Locale.setDefault(Locale.US);
         Scanner entry = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
@@ -19,7 +19,7 @@ public class Program {
         System.out.println("Enter departament`s name: "); 
         String departament = entry.nextLine();
         System.out.println("Enter work data: ");
-        System.out.println("Nmae: ");
+        System.out.println("Nae: ");
         String workerName = entry.nextLine();
         System.out.println("Level: ");
         String workerLevel = entry.nextLine();
@@ -31,7 +31,7 @@ public class Program {
         System.err.println("How many contracts to this worker? ");
         int n = entry.nextInt();
 
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             System.out.println("Enter contract #" + i + " data: ");
             System.out.println("Date (DD/MM/YYYY): ");
             Date contractDate = sdf.parse(entry.next());
@@ -44,14 +44,14 @@ public class Program {
         }
 
         System.err.println();
-        System.err.println("ENter month and year to calcule income (MM/YYYY): ");
-        String monthAndYear = entry.nextLine();
+        System.err.println("Enter month and year to calcule income (MM/YYYY): ");
+        String monthAndYear = entry.next();
         int month = Integer.parseInt(monthAndYear.substring(0, 2));
         int year = Integer.parseInt(monthAndYear.substring(3));
 
         System.out.println("Name: " + worker.getName());
         System.out.println("Department: " + worker.getDepartment().getName());
-        System.err.println("Incame for " + monthAndYear +": " + String.format("%.2f", worker.income(year, month)) );
+        System.err.println("Incame for " + monthAndYear +": " + String.format("%.2f", worker.income(year, month)));
 
         entry.close();
     }
