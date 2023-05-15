@@ -51,7 +51,7 @@ public class Program {
 
         System.out.println("Name: " + worker.getName());
         System.out.println("Department: " + worker.getDepartment().getName());
-        System.err.println("Incame for " + monthAndYear +": " + String.format("%.2f", worker.income(year, month)));
+        System.err.println("Incame for " + monthAndYear +": " + String.format("%.2f", worker.income(year,  month)));
 
         entry.close();
     }
